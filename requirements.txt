@@ -1,5 +1,5 @@
 Django
-Cython=
+Cython
 Pillow
 tesserocr
 gunicorn

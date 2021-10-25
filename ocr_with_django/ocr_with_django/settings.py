@@ -25,7 +25,7 @@ SECRET_KEY = '_7^3839h0ca0gexvz*1la^8^d)#+*d!=v6(8@gpbhytt^1uev5'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["colab.research.google.com"]
+ALLOWED_HOSTS = ["colab.research.google.com", "127.0.0.1"]
 
 
 # Application definition

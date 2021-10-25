@@ -1,3 +1,24 @@
+# run
+
+
+!git clone https://github.com/amenallah-salem/EDF-ectraction.git
+
+!apt install tesseract-ocr libtesseract-dev libleptonica-dev
+#must be set in linux machines 
+
+cd ./EDF-ectraction
+
+!pip install -r ./requirements.txt
+
+cd ocr_with_django/
+
+!python manage.py migrate
+
+!python manage.py collectstatic --noinput
+
+!python manage.py runserver
+
+
 ===============
 OCR with Django
 ===============

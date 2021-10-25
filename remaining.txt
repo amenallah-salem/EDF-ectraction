@@ -1,7 +1,0 @@
-works with pdf & imgs
-ce
-rest API 
-acceder avec EC2 & available on a link 
-maybe phone support 
-______________
-

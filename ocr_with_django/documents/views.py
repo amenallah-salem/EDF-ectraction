@@ -19,7 +19,7 @@ class OcrView(View):
                 sharpened_image = image.filter(ImageFilter.SHARPEN)
                 api.SetImage(sharpened_image)
                 utf8_text = api.GetUTF8Text()
-        print("finish extraction: OK")
+        print("finish extraction")
 
         return JsonResponse({'utf8_text': utf8_text})
 ocr_view = csrf_exempt(OcrView.as_view())

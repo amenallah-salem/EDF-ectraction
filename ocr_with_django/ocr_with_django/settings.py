@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'documents',
-    'pdf_single_facture'
+    'pdf_single_facture', 
+    'pdf_multiple_facture'
 ]
 
 MIDDLEWARE = [
@@ -52,13 +53,13 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'ocr_with_django.urls'
-print('_________________')
-print("Base dir : ",BASE_DIR)
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            os.path.join(BASE_DIR, 'pdf_single_facture/templates'),
+            os.path.join(BASE_DIR, 'pdf_multiple_facture/templates'),
+            os.path.join(BASE_DIR, 'pdf_single_facture/templates')
         ],
         'APP_DIRS': True,
         'OPTIONS': {

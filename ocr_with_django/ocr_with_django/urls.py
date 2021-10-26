@@ -19,6 +19,8 @@ from django.urls import include, path
 from documents.views import ocr_view, ocr_form_view
 from pdf_single_facture.views import ocr_form_view_for_pdf, ocr_view_for_pdf
 from pdf_multiple_facture.views import ocr_view_for_pdf_multiple_facture, ocr_form_view_for_pdf_multiple_facture
+from django.conf.urls.static import static
+from django.conf import settings
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^ocr/', ocr_view, name='ocr_view'),
@@ -32,4 +34,5 @@ urlpatterns = [
 
 
 
-]
+]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+

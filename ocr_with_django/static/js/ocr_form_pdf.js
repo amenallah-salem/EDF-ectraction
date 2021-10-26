@@ -19,9 +19,9 @@ $(document).ready(function() {
         event.stopPropagation();
         event.preventDefault();
         data = new FormData();
-        data.append('image', $imageInput[0].files[0]);
+        data.append('file', $imageInput[0].files[0]);
         $.post({
-            url: "/ocr/",
+            url: "/ocr_for_pdf/",
             data: data,
             cache: false,
             contentType: false,

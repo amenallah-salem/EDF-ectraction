@@ -16,9 +16,12 @@ class OcrView(View):
         print("starting reading image")
         with PyTessBaseAPI() as api:
             with Image.open(request.FILES['image']) as image:
-                sharpened_image = image.filter(ImageFilter.SHARPEN)
-                api.SetImage(sharpened_image)
+                sharpened_image = image.filter(ImageFilter.SHARPEN)#image_filter to clarify the image
+                api.SetImage(sharpened_image)#to get full text
+                
                 utf8_text = api.GetUTF8Text()
+                print("full text", api.GetUTF8Text())
+                print("transforming text to utf8 bits format")
         print("finish extraction")
 
         return JsonResponse({'utf8_text': utf8_text})

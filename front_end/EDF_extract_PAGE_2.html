@@ -38,7 +38,7 @@
 				}
 	   
 					  $.ajax({
-				   url: 'http://127.0.0.1:8000/extract_cin/',
+				   url: 'http://127.0.0.1:8000/extract_cin2/',
 				   type: 'post',
 				   data: fd,
 				   contentType: false,
@@ -54,10 +54,8 @@
 						$('#nom').val(response['data']['identity'][0]['nom']);
 						$('#prenom').val(response['data']['identity'][0]['prenom']);
 						$('#lieu_naissance').val(response['data']['identity'][0]['lieu de naissance']);
-						
 						$('#date_naissance').val(response['data']['identity'][0]['date de naissance']);
 						$('#num_identite').val(response['data']['identity'][0]['CIN']);
-						
 					   }else{
 						   alert('file not uploaded');
 					   }
@@ -101,32 +99,29 @@
 				<div class="col-12 col-md-6">
 					<div class="form-row">
 						<div class="form-group col-12 col-md-6">
-    						<label for="nom">Nom</label>
+    						<label for="nom">Nom du client</label>
     						<input type="text" class="form-control" onchange="success()" id="nom" placeholder="Entrez votre nom" name="nom">
   						</div>
   						<div class="form-group col-12 col-md-6">
-    						<label for="prenom">Prénom</label>
+    						<label for="prenom">Réf Acheminement</label>
     						<input type="text" class="form-control" id="prenom"  onchange="success()" placeholder="Entrez votre prénom" name="prenom">
   						</div>
 					</div>
 					<div class="form-row">
 						<div class="form-group col-12 col-md-6">
-    						<label for="date_naissance">Date de naissance</label>
+    						<label for="date_naissance">Date d'écheance </label>
     						<input type='date' class="form-control" id="date_naissance"  onchange="success()" name="date_naissance">
   						</div>
-  						<div class="form-group col-12 col-md-6">
-    						<label for="lieu_naissance">Lieu de naissance</label>
-    						<input type="text" class="form-control" id="lieu_naissance"  onchange="success()" placeholder="Entrez votre lieu de naisssance" name="lieu_naissance">
-  						</div>
+  						
 					</div>
 					<div class="form-row">
 						<div class="form-group col-12 col-md-6">
-    						<label for="num_identite">Numéro de la pièce d'identité</label>
+    						<label for="num_identite">Numéro de page de Facture</label>
     						<input type='number' class="form-control" id="num_identite"  onchange="success()" aria-describedby="emailHelp" placeholder="Entrez le numéro de la pièce d'identité" name="num_identite">
   						</div>
 						  
 					</div>
-					<button type="submit" id="button"class="btn btn-primary" disabled >Soumettre</button>
+					<button type="submit" id="button"class="btn btn-primary" disabled >Soumettre à la base de données</button>
 					</div>
 					
 					<!-- Image loader -->

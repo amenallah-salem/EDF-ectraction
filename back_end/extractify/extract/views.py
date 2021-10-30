@@ -1,100 +1,21 @@
-from django.shortcuts import render
 import pprint
 from pdf2image import convert_from_path
 from pytesseract import image_to_string
-
-from django.http import HttpResponse
-from rest_framework.response import Response
 from rest_framework.decorators import api_view
-from rest_framework.views import APIView
 from .models import image, filePdf
 from django.http import JsonResponse#
-from PyPDF2 import PdfFileWriter, PdfFileReader
-import img2pdf
-from pdf2image import convert_from_path, convert_from_bytes
-from IPython.display import display, Image
-import math
 from typing import Tuple, Union
-import cv2
-import numpy as np
-from deskew import determine_skew
-import re
-import pytesseract
-from pytesseract import Output
 import re
 from datetime import datetime
-
-from PIL import Image
-import glob
-from pathlib import Path
 import os
-import json
-
-import os
-from PIL import Image
-from pathlib import Path
-import json
-import shutil
-import pytesseract
-import re
-from detectron2.engine import DefaultTrainer
-from detectron2.evaluation import COCOEvaluator
-from detectron2.data.datasets import register_coco_instances
-from PyPDF2 import PdfFileWriter, PdfFileReader
-import img2pdf
-from pdf2image import convert_from_path, convert_from_bytes
-from IPython.display import display, Image
-import math
-from typing import Tuple, Union
-import cv2
-import numpy as np
-from deskew import determine_skew
-import re
-import pytesseract
-from pytesseract import Output
-from PIL import Image
-import glob
-from pathlib import Path
-import os
-import json
 import re
 from django.conf import settings 
 
-
-
-
-#############################################################################
-#new modifications 
-
-#############################################################################
-
-#############################################################################
-#func
-# Useful libraries
-
 def convert_pdf_to_img(pdf_file):
-    """
-    @desc: this function converts a PDF into Image
-    
-    @params:
-        - pdf_file: the file to be converted
-    
-    @returns:
-        - an interable containing image format of all the pages of the PDF
-    """
     return convert_from_path(pdf_file)
 
 
 def convert_image_to_text(file):
-    """
-    @desc: this function extracts text from image
-    
-    @params:
-        - file: the image file to extract the content
-    
-    @returns:
-        - the textual content of single image
-    """
     text = image_to_string(file)
     return text
 
